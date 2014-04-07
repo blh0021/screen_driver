@@ -13,3 +13,4 @@ java_import 'java.io.ByteArrayOutputStream'
 
 require "driver/screen.rb"
 require "driver/mouse.rb"
+require "driver/driver.rb"
