@@ -2,7 +2,7 @@ Screen Driver Gem
 =============
 
 To use :
-
+```ruby
 require 'java'
 require 'screen_driver'
 
@@ -13,4 +13,4 @@ if (@driver.find("yourimage.png"))
 else
   puts "bad"
 end
-        
+```
