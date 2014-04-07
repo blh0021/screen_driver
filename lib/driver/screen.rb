@@ -1,10 +1,10 @@
-#java_import 'java.awt.Rectangle'
-#java_import 'java.awt.Robot'
-#java_import 'java.awt.Toolkit'
-
 module ScreenDriver
   class Screen
     class << self
+
+      def initialize
+        
+      end
 
       def screenshot
         toolkit = Toolkit::getDefaultToolkit()
@@ -48,6 +48,11 @@ module ScreenDriver
         os = ByteArrayOutputStream.new
         ImageIO::write(image, "png", os)
         return os.toByteArray()
+      end
+
+      def put_image(image, filename)
+        file = java::io::File.new(filename)
+        ImageIO::write(image, "png", file)
       end
 
     end
