@@ -36,6 +36,10 @@ module ScreenDriver
         @mouse.double_click(x, y)
       end
     end
-    #end
+
+    def get_arr(image)
+      img = @screen.get_image(image)
+      @screen.img_to_rgb_array(img)
+    end
   end
 end
