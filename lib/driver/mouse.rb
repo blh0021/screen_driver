@@ -1,6 +1,12 @@
 
 module ScreenDriver
   class Mouse
+
+    def mouse_move(x, y)
+      mouse = Robot.new
+      mouse.mouseMove(x, y)
+    end
+
     def left_click(x, y)
       mouse = Robot.new
       mouse.mouseMove(x,y)

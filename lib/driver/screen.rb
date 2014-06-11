@@ -11,7 +11,10 @@ module ScreenDriver
       rect = Rectangle.new(screen_size)
       robot = Robot.new
       image = robot.createScreenCapture(rect)
-      return image
+      conv = BufferedImage.new(image.getWidth, image.getHeight, BufferedImage::TYPE_USHORT_565_RGB)
+      conv.getGraphics().drawImage(image, 0, 0, nil);
+      put_image(conv, "conv.png")
+      return conv 
     end
 
     def search_image(i1, i2)
@@ -55,7 +58,11 @@ module ScreenDriver
 
     def get_image(filename)
       file = java::io::File.new(filename)
-      return ImageIO::read(file)
+      buf = ImageIO::read(file) 
+      conv = BufferedImage.new(buf.getWidth, buf.getHeight, BufferedImage::TYPE_USHORT_565_RGB)
+      conv.getGraphics().drawImage(buf, 0, 0, nil);
+      return conv
+#      return ImageIO::read(file)
     end
 
     def byte_array(image)

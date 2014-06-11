@@ -31,6 +31,18 @@ module ScreenDriver
       end
     end
 
+    def move_mouse(image)
+      screenshot = @screen.screenshot
+      srch = @screen.get_image(image)
+      is = ImageSearch.new
+      is.searchImage(screenshot, srch)
+      if (is.getX >= 0 && is.getY >= 0)
+        @mouse.mouse_move(is.getX, is.getY)
+      end
+
+    end
+
+
     def left_click(image)
       screenshot = @screen.screenshot
       srch = @screen.get_image(image)
