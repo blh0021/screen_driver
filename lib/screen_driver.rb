@@ -12,7 +12,7 @@ java_import 'java.awt.image.BufferedImage'
 java_import 'java.io.ByteArrayOutputStream'
 
 require File.join(File.dirname(__FILE__), '../target/ImageSearch.jar')
-#import 'ImageSearch'
+import 'ImageSearch'
 
 require "driver/screen.rb"
 require "driver/mouse.rb"
