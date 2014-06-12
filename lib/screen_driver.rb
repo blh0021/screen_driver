@@ -11,7 +11,7 @@ java_import 'javax.imageio.ImageIO'
 java_import 'java.awt.image.BufferedImage'
 java_import 'java.io.ByteArrayOutputStream'
 
-require File.join(File.dirname(__FILE__), '../target/ImageSearch.jar')
+require "ImageSearch.jar"
 import 'ImageSearch'
 
 require "driver/screen.rb"

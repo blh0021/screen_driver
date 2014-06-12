@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split("\n") 
   s.homepage    = ''
   s.license     = ''
-  s.require_paths = ["lib"]
+  s.require_paths = ["lib", "target"]
 end
