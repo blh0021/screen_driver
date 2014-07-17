@@ -17,3 +17,4 @@ import 'ImageSearch'
 require "driver/screen.rb"
 require "driver/mouse.rb"
 require "driver/driver.rb"
+require "driver/keys.rb"

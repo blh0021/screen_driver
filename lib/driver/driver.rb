@@ -4,6 +4,27 @@ module ScreenDriver
     def initialize
       @screen = Screen.new
       @mouse = Mouse.new
+      @keys = Keys.new
+    end
+
+    def press_keys(string)
+      robot = Robot.new
+      keys = string.upcase.split("")
+      keys.each do |key|
+        kc = @keys.get(key)
+        robot.keyPress(kc)
+        robot.keyRelease(kc)
+      end
+    end
+
+    def press_modified_key(modifier, key)
+      m = @keys.get(modifier.upcase)
+      k = @keys.get(key.upcase)
+      robot = Robot.new
+      robot.keyPress(m)
+      robot.keyPress(k)
+      robot.keyRelease(k)
+      robot.keyRelease(m)
     end
 
     def screen_to_file(filename)
